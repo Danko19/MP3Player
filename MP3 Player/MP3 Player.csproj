@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7786250-4F4B-4AED-AE69-309284253809}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MP3_Player</RootNamespace>
+    <AssemblyName>MP3 Player</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bass.Net">
+      <HintPath>..\..\..\..\..\Downloads\Bass.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cs\BassLike.cs" />
+    <Compile Include="cs\TagModel.cs" />
+    <Compile Include="cs\Vars.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_play_1976.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_stop_6040.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_eject_8451.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bass.dll" />
+    <Content Include="Plugins\xmp-wv.dll" />
+    <None Include="Resources\1498776567_arrow-down.png" />
+    <None Include="Resources\1498776556_arrow-up.png" />
+    <None Include="Resources\1498657581_NoVol1.png" />
+    <None Include="Resources\1498657581_NoVol.png" />
+    <None Include="Resources\1498696898_retweet.png" />
+    <None Include="Resources\1498696044_repeat.png" />
+    <None Include="Resources\1498696071_share-alt.png" />
+    <None Include="Resources\1498687517_remove-sign.png" />
+    <None Include="Resources\1498687234_remove-sign.png" />
+    <None Include="Resources\1498687216_minus-sign.png" />
+    <None Include="Resources\1498687269_plus-sign.png" />
+    <None Include="Resources\1498665056_Untitled-2-12.png" />
+    <None Include="Resources\1498664964_Untitled-2-13.png" />
+    <None Include="Resources\folder_music_2821.png" />
+    <None Include="Resources\593605-bigthumbnail.jpg" />
+    <None Include="Resources\graffiti_background_myspace_by_j_mgraphics650.png" />
+    <None Include="Resources\1498657581_VolumeNormalBlue.png" />
+    <None Include="Resources\1498657435_sound_on.ico" />
+    <None Include="Resources\1498657385_Volume_Max.png" />
+    <None Include="Resources\speaker_on_4789.png" />
+    <None Include="Resources\player_fwd_7767.png" />
+    <None Include="Resources\player_rew_5190.png" />
+    <None Include="Resources\player_start_7798.png" />
+    <None Include="Resources\kartinki.me-8377.jpg" />
+    <None Include="Resources\backg.png" />
+    <None Include="Resources\niceimage.ru-31102.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ColorSlider\ColorSlider.csproj">
+      <Project>{16E224DC-7FF0-4908-8318-D6A3AC2E797A}</Project>
+      <Name>ColorSlider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
